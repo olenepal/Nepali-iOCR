@@ -22,8 +22,17 @@ IMGMAXSIZE=1024
 L1Distance = lambda p1p2: abs(p1p2[1]-p1p2[0])
 L1DistanceFrac = lambda p1p2: L1Distance(p1p2)/p1p2[0]
 
+#rescale images
+def rescaleImg(frame, scale=0.75):
+    width = int(frame.shape[1]*scale)
+    height = int(frame.shape[0]*scale)
+
+    dimensions = (width, height)
+
+    return cv2.resize(frame, dimensions, interpolation=cv2.INTER_AREA)
+
 def showImage(name,img):
-    imgr=cv2.resize(img,(750,1000))#600,800
+    imgr=rescaleImg(img)
     cv2.imshow(name,imgr)
 
 def colorSpread(img8, pointSet:np.ndarray):
