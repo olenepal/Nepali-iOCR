@@ -189,8 +189,7 @@ def detect(imgo,padding=0,iteration=1)->RectSet:
 
 
 if __name__ == '__main__': 
-    #img = cv2.imread("/Users/kartikeshmishra/Downloads/gr7scImg/img1.jpg")
-    img = cv2.imread('C:/Users/olenepal/Desktop/kesdev/Nepali-iOCR/trainImages/test2.jpg')
+    img = cv2.imread('training_images/test2.jpg')
     #rects = doubleContourDetect(img,iteration=3)
     #rects = detectBylines(img)
     rects = doubleContourDetect(img)
